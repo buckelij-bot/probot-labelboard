@@ -49,7 +49,8 @@ describe('probot-labelboard', () => {
 
     it('fetches projects', async () => {
       await robot.receive(payload)
-      expect(github.projects.getRepoProjects).not.toHaveBeenCalled()
+      //
+      expect(github.projects.getRepoProjects).toHaveBeenCalled()
       expect(github.projects.getProjectColumns).toHaveBeenCalled()
       expect(github.projects.createProjectCard).toHaveBeenCalled()
     })
